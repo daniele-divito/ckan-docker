@@ -465,8 +465,6 @@ class DCATRDFHarvester(DCATHarvester):
                                del package_schema['access_rights']
                              if dataset.get('publisher_identifier')=='cciaan':
                                del package_schema['access_rights']
-                             if dataset.get('publisher_identifier')=='piersoft':
-                               del package_schema['access_rights']
 
 
                              dataset.pop('access_rights',None)
