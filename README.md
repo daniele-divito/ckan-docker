@@ -82,6 +82,11 @@ Using the default values on the `.env.example` file will get you a working CKAN 
 
 	git clone https://github.com/daniele-divito/ckan-docker.git
 
+(OPTIONAL) To create a selfsigned https cert and key for a local docker execution:
+
+	openssl req     -subj '/C=IT/ST=Rome/L=Rome/O=None/CN=localhost'     -x509 -newkey rsa:4096     -nodes -keyout nginx/setup/default_key.pem     -keyout nginx/setup/ckan-local.key     -out nginx/setup/ckan-local.crt     -days 365
+
+
 To build the images (remember before to rename and configure .env.example file) :
 
 	docker compose build

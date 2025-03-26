@@ -20,6 +20,10 @@ services:
       - ckan
     ports:
       - "0.0.0.0:${NGINX_SSLPORT_HOST}:${NGINX_SSLPORT}"
+    volumes:
+      - ${NGINX_DOMAIN_PRIVKEY}:/etc/nginx/certs/ckan-local.key:ro
+      - ${NGINX_DOMAIN_CERT}:/etc/nginx/certs/ckan-local.crt:ro
+      - /var/log/nginx/:/var/log/nginx/:rw
 
   ckan:
     container_name: ${CKAN_CONTAINER_NAME}
