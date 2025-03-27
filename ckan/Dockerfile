@@ -80,3 +80,5 @@ RUN for d in $APP_DIR/patches/*; do \
     done
 
 RUN apk add nano
+
+COPY patches/custom-css/main.css ${APP_DIR}/src/ckan/ckan/public/base/css/
